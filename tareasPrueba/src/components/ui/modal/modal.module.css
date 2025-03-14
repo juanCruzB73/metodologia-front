@@ -1,0 +1,32 @@
+.containerModal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: brightness(90%) blur(2px);
+}
+.containerPopUp{
+    background-color: #fff;
+    box-shadow: 5px 2px 10px #6e6e6e;
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+}
+.containerPopUp input, textarea{
+    width: 100%;
+    padding: .3rem;
+    resize: none;
+}
+.buttonCards{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
