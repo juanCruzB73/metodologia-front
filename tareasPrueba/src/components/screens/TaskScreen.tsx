@@ -5,9 +5,9 @@ export const TaskScreen = () => {
 
 
   return (
-    <div>
+    <>
         <Header/>
         <ListTareas/>
-    </div>
+    </>
   )
 }

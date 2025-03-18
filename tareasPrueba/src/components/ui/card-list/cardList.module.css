@@ -1,0 +1,38 @@
+.cardBody{
+    background-color: #172B46;
+    color: #51C8B3;
+    width: 30vw;
+    height: 35vh;
+}
+.carListButtonContainer{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-around;
+    padding: .4rem;
+}
+.carListButtonContainer button{
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: none;
+    color: #51C8B3;
+}
+.carListButtonContainer button:hover{
+    cursor: pointer;
+    color: #367e70;
+}
+.carListInfoContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    height: 70%;
+}
+.carListInfoContainer h3{
+    font-size: 1.5rem;
+    color: white;
+}
+.carListInfoContainer p{
+    font-size: 1rem;
+    color: rgb(167, 165, 165);
+}

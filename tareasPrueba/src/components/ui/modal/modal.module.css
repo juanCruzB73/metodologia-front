@@ -9,10 +9,17 @@
     height: 100vh;
     backdrop-filter: brightness(90%) blur(2px);
 }
+.mainContainerPopUp{
+    padding: .8rem;
+    border-radius: 1rem;
+    background-color: #09182D;
+    color: white;
+    box-shadow: 5px 2px 10px #a3adbb79;
+}
 .containerPopUp{
-    background-color: #fff;
-    box-shadow: 5px 2px 10px #6e6e6e;
+    background-color: #09182D;
     width: 35vw;
+    height: 25vh;
     display: flex;
     flex-direction: column;
     gap: .4rem;
@@ -24,9 +31,26 @@
     width: 100%;
     padding: .3rem;
     resize: none;
+    color: #51C8B3;
+    background-color: transparent;
+    border: 1px solid #51C8B3;
+    border-radius: .3rem;
+}
+.containerPopUp input, textarea:focus{
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+    color: inherit;
 }
 .buttonCards{
     display: flex;
     width: 100%;
     justify-content: space-around;
+}
+.buttonCards button{
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: .8rem;
+    padding: .4rem;
+    color: white;
 }

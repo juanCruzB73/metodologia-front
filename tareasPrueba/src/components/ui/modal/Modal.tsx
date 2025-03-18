@@ -3,10 +3,9 @@ import { taskStore } from '../../../store/taskStore';
 import style from './modal.module.css';
 import { ITask } from '../../../types/ITask';
 import { useTask } from '../../../hooks/useTask';
+import Swal from 'sweetalert2';
 
 type Modal={
-  popUpStatus:boolean;
-  onOpenPopUp:VoidFunction;
   onClosePopUp:VoidFunction;
 }
 const intialState:ITask={
@@ -14,7 +13,7 @@ const intialState:ITask={
   description:"",
   fechaLimite:"",
 }
-export const Modal:FC<Modal> = ({ popUpStatus , onOpenPopUp, onClosePopUp }) => {
+export const Modal:FC<Modal> = ({ onClosePopUp }) => {
 
   const activeTask = taskStore((state)=>state.activeTask);
   const setActiveTask = taskStore((state)=>state.setActiveTask);
@@ -34,18 +33,32 @@ export const Modal:FC<Modal> = ({ popUpStatus , onOpenPopUp, onClosePopUp }) => 
   };
   const handleSubmit=(e:FormEvent)=>{
     e.preventDefault();
-    if(activeTask){
-      onUpdateTask(formValue);
-    }else{
-      addTask(formValue);
-    }
-    onClosePopUp();
+    Swal.fire({
+                title: 'Do you want to submit this?',
+                text: 'continue?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, submit it!',
+                cancelButtonText: 'Cancel'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                  if(activeTask){
+                    onUpdateTask(formValue);
+                    onClosePopUp();
+                  }else{
+                    addTask(formValue);
+                    onClosePopUp();
+                  }
+                }
+            });
   }
   ;
   
   return (
     <div className={style.containerModal}>
-        <div >
+        <div className={style.mainContainerPopUp}>
           <div>
             <h3>{activeTask?"Edit task":"Create task"}</h3>
           </div>

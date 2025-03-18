@@ -29,9 +29,8 @@ export const ListTareas = () => {
     return (
         <>
         <div className={styles.listTareasContainer}>
-            <div>
                 <div className={styles.listTareasContainerTitle}>
-                    <h2>List Tasks</h2>
+                    <h2>Task's list</h2>
                     <button onClick={()=>handleOpenPopUp()}>Add task</button>
                 </div>
                 <div className={styles.listTareasContainerList}>
@@ -47,9 +46,8 @@ export const ListTareas = () => {
                         )
                     }
                 </div>
-            </div>
         </div>
-        {activePopUp?<Modal popUpStatus={activePopUp} onOpenPopUp={handleOpenPopUp} onClosePopUp={handleClosePopUp}/>:<></>}
+        {activePopUp && <Modal onClosePopUp={handleClosePopUp}/>}
         </>
     )
 }
