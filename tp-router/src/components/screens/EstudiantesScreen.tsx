@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"
+import { useSearchParams } from "react-router-dom"
 import { getCourseById } from "../../http/api";
 import { IStudent } from "../../types/student";
 
@@ -7,8 +7,10 @@ export const EstudiantesScreen = () => {
   
   const [students,setStudents]=useState<IStudent[]>([])
 
-  const {courseId}=useParams();
-  
+  const [searchParams] = useSearchParams();
+  const courseId = searchParams.get("course")
+  console.log(courseId)
+
   useEffect(()=>{
     const getCourse=async()=>{
       if (courseId){

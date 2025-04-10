@@ -23,7 +23,7 @@ export const CursosScreen = () => {
         courses.map((course:ICourses)=>(
           <div key={course.id}>
           <h2>{course.nombre}</h2>
-          <h3 onClick={()=>{navigate(`/students/${course.id}`)}}>Estudiantes</h3>
+          <h3 onClick={()=>{navigate(`/students?course=${course.id}`)}}>Estudiantes</h3>
           </div>
         ))
       }
