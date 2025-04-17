@@ -9,7 +9,6 @@ export const EstudiantesScreen = () => {
 
   const [searchParams] = useSearchParams();
   const courseId = searchParams.get("course")
-  console.log(courseId)
 
   useEffect(()=>{
     const getCourse=async()=>{
